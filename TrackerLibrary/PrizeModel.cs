@@ -9,6 +9,10 @@ namespace TrackerLibrary
     public class PrizeModel
     {
         /// <summary>
+        /// Id
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
         /// Represents the place number of team in the tournament
         /// </summary>
         public int PlaceNumber { get; set; }
@@ -29,5 +33,37 @@ namespace TrackerLibrary
         /// </summary>
         public double PrizPercentage { get; set; }
 
+        /// <summary>
+        /// constructor method
+        /// </summary>
+        public PrizeModel()
+        {
+
+        }
+
+        /// <summary>
+        /// Constructor method for string conversion of properties values to set
+        /// </summary>
+        /// <param name="placeName"></param>
+        /// <param name="placeNumber"></param>
+        /// <param name="prizeAmount"></param>
+        /// <param name="prizePercentage"></param>
+        public PrizeModel(string placeName, string placeNumber, string prizeAmount, string prizePercentage )
+        {
+            PlaceName = placeName;
+
+            int placeNumberValue = 0;
+            int.TryParse(placeNumber, out placeNumberValue);
+            PlaceNumber = placeNumberValue;
+
+            decimal prizeAmountValue = 0;
+            decimal.TryParse(prizeAmount, out prizeAmountValue);
+            PrizeAmount = prizeAmountValue;
+
+            double prizePercentageValue = 0;
+            double.TryParse(prizePercentage, out prizePercentageValue);
+            PrizPercentage = prizePercentageValue;
+
+        }
     }
 }
