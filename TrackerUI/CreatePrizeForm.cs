@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackerLibrary;
+using TrackerLibrary.DBAdoptor;
+using TrackerLibrary.Models;
 
 namespace TrackerUI
 {
@@ -47,6 +49,12 @@ namespace TrackerUI
             }
         }
 
+        /// <summary>
+        /// Create Prize form field validation
+        /// </summary>
+        /// <returns> 
+        /// true or false
+        /// </returns>
         private bool ValidateForm()
         {
             bool output = true;
